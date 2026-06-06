@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizVerse — Test Your Knowledge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- Theme toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="theme-icon">☀️</span>
+  </button>
+
+  <!-- ===== WELCOME SCREEN ===== -->
+  <div class="screen active" id="welcomeScreen">
+    <div class="welcome-card">
+      <div class="logo-wrap">
+        <span class="logo-icon">🧠</span>
+        <h1 class="logo-text">QuizVerse</h1>
+      </div>
+      <p class="tagline">10 questions. 3 types. One leaderboard of glory.</p>
+      <div class="quiz-stats-preview">
+        <div class="stat-pill">📝 5 MCQ</div>
+        <div class="stat-pill">☑️ 3 Multi-Select</div>
+        <div class="stat-pill">✏️ 2 Fill-in-Blank</div>
+      </div>
+      <div class="info-box">
+        <span>⏱ 20 seconds per question</span>
+        <span>🏆 Score tracked live</span>
+      </div>
+      <button class="btn-primary" id="startBtn">Launch Quiz 🚀</button>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ SCREEN ===== -->
+  <div class="screen" id="quizScreen">
+    <div class="quiz-container">
+
+      <!-- Top bar -->
+      <div class="quiz-topbar">
+        <div class="question-counter">
+          <span id="currentQ">1</span> <span class="sep">/</span> <span id="totalQ">10</span>
+        </div>
+        <div class="timer-wrap">
+          <svg class="timer-ring" viewBox="0 0 48 48">
+            <circle class="ring-bg" cx="24" cy="24" r="20" />
+            <circle class="ring-fill" id="timerRing" cx="24" cy="24" r="20" />
+          </svg>
+          <span class="timer-num" id="timerNum">20</span>
+        </div>
+        <div class="live-score">
+          ⚡ <span id="liveScore">0</span>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Question type badge -->
+      <div class="type-badge" id="typeBadge">Multiple Choice</div>
+
+      <!-- Question text -->
+      <h2 class="question-text" id="questionText">Loading question…</h2>
+
+      <!-- Multi-select hint -->
+      <p class="multi-hint hidden" id="multiHint">💡 Select all that apply</p>
+
+      <!-- Options container -->
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <!-- Fill-in-blank input -->
+      <div class="fib-wrap hidden" id="fibWrap">
+        <input
+          type="text"
+          class="fib-input"
+          id="fibInput"
+          placeholder="Type your answer here…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <!-- Feedback bar -->
+      <div class="feedback-bar hidden" id="feedbackBar">
+        <span class="feedback-icon" id="feedbackIcon"></span>
+        <span class="feedback-text" id="feedbackText"></span>
+      </div>
+
+      <!-- Next button -->
+      <button class="btn-next" id="nextBtn" disabled>
+        Next <span class="arrow">→</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ===== RESULT SCREEN ===== -->
+  <div class="screen" id="resultScreen">
+    <div class="result-card">
+
+      <div class="trophy-anim" id="trophyAnim">🏆</div>
+      <h2 class="result-title" id="resultTitle">Excellent!</h2>
+      <p class="result-sub" id="resultSub">You crushed it!</p>
+
+      <!-- Score ring -->
+      <div class="score-ring-wrap">
+        <svg class="score-ring" viewBox="0 0 160 160">
+          <circle class="ring-bg" cx="80" cy="80" r="68" />
+          <circle class="ring-score" id="scoreRing" cx="80" cy="80" r="68" />
+        </svg>
+        <div class="score-center">
+          <span class="score-pct" id="scorePct">0%</span>
+          <span class="score-label">Score</span>
+        </div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="stats-grid">
+        <div class="stat-card correct">
+          <span class="stat-icon">✅</span>
+          <span class="stat-val" id="correctCount">0</span>
+          <span class="stat-name">Correct</span>
+        </div>
+        <div class="stat-card incorrect">
+          <span class="stat-icon">❌</span>
+          <span class="stat-val" id="incorrectCount">0</span>
+          <span class="stat-name">Incorrect</span>
+        </div>
+        <div class="stat-card skipped">
+          <span class="stat-icon">⏭️</span>
+          <span class="stat-val" id="skippedCount">0</span>
+          <span class="stat-name">Skipped</span>
+        </div>
+      </div>
+
+      <!-- Detailed breakdown -->
+      <details class="breakdown-wrap">
+        <summary>View Answer Breakdown</summary>
+        <div class="breakdown-list" id="breakdownList"></div>
+      </details>
+
+      <div class="result-actions">
+        <button class="btn-primary" id="restartBtn">🔄 Restart Quiz</button>
+        <button class="btn-secondary" id="shareBtn">📤 Share Score</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
