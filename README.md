@@ -90,7 +90,7 @@ quiz-app/
 
 ## 📸 Screenshots
 
-> _Add screenshots here after running the app_
+
 
 | Welcome Screen | Quiz Screen | Result Screen |
 |---|---|---|
@@ -123,6 +123,10 @@ quiz-app/
 - [ ] Backend integration for user accounts and global leaderboards
 
 ---
+
+## DEPLOYMENT ON RENDER
+
+https://sct-wd-3-p8im.onrender.com
 
 ## 👤 Author
 
