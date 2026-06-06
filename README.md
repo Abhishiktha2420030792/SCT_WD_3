@@ -1,4 +1,4 @@
-# 🧠 QuizVerse — Interactive Quiz Game
+<img width="1919" height="867" alt="hero" src="https://github.com/user-attachments/assets/bcc90e97-d72f-4c9b-b3e0-e2d56a1d6b22" /># 🧠 QuizVerse — Interactive Quiz Game
 
 > A modern, feature-rich quiz application built with vanilla HTML, CSS, and JavaScript.  
 > Test your knowledge across multiple question types with a sleek cosmic UI.
@@ -90,12 +90,20 @@ quiz-app/
 
 ## 📸 Screenshots
 
+## Home Screen
 
+![Home Screen](<img width="1919" height="867" alt="hero" src="https://github.com/user-attachments/assets/00b5080e-d544-42d6-92f1-ac8689a19402" />
+)
 
-| Welcome Screen | Quiz Screen | Result Screen |
-|---|---|---|
-| _(screenshot)_ | _(screenshot)_ | _(screenshot)_ |
+## Question Screen
 
+![Question Screen](<img width="1919" height="876" alt="Quiz" src="https://github.com/user-attachments/assets/8536499d-335f-4a7f-b88f-1991ba491367" />
+)
+
+## Result Screen
+
+![Result Screen](<img width="1919" height="858" alt="Results page" src="https://github.com/user-attachments/assets/94e289fe-de82-4841-8722-eb529bcde437" />
+)
 ---
 
 ## 🧩 Question Types Included
